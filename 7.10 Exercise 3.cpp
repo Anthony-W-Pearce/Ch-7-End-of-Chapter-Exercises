@@ -107,35 +107,35 @@ int main() {
 		else
 			++Simp_outside_root;
 	}
-	Root_coef_to_str = to_string(Root_Coef);		// Convert root coefficient to string for conditional operator use
+	Root_coef_to_str = to_string(Root_Coef);																										// Convert root coefficient to string for conditional operator use
 	cout.setf(ios::fixed);		
 
 	// Output
 	cout << setprecision(1) << "You entered a = " << Value_a << ", b = " << Value_b << ", and c = " << Value_c << "." << "\n\n";
 	cout << "The solution based on these values is: " << "\n\n" << setprecision(1);
 
-	if (Discrim == 0)		// Output when just 1 root solution
+	if (Discrim == 0)																																// Output when just 1 root solution
 	{
 		cout << (Neg_solution == true ? "-" : "") << "(" << (Neg_numerator == true && Neg_solution != true ? "-" : "") << Numerator;
 
-		if (Denominator != 1)																// Formatting, if denominator is 1 then it is excluded.
+		if (Denominator != 1)																														// Formatting, if denominator is 1 then it is excluded.
 			cout << " / " << Denominator << ")";
 		
-		if (abs(Root_plus) != floor(abs(Root_plus)))										// Formatting, states exact value if solution is a whole number
-			cout << "\n\nWhich is approximately: " << setprecision(6) << Root_plus;			// otherwise states approximate value.
+		if (abs(Root_plus) != floor(abs(Root_plus)))																								// Formatting, states exact value if solution is a whole number
+			cout << "\n\nWhich is approximately: " << setprecision(6) << Root_plus;																	// otherwise states approximate value.
 		else
 			cout << "\n\nWhich is exactly: " << setprecision(6) << Root_plus;
 		
 		cout << "\n\n" << "Since the discriminate is 0, both roots are the same.";
 	}
-	else if (Complex_number == true)		// Output when 2 complex root solutions
+	else if (Complex_number == true)																												// Output when 2 complex root solutions
 	{
 		cout.precision(1);
 		cout << (Neg_solution == true ? "-" : "") << "(" << (Neg_numerator == true && Neg_solution != true ? "-" : "") << Numerator					// First root
 			<< (Neg_numerator == true ? " - " : " + ") << (Root_Coef != 1 ? Root_coef_to_str : "") << (Complex_number == true ? "i" : "")			// solution
 			<< (Discrim != 0 ? " sqrt " : "") << Discrim << ")";		
 		
-		if (Denominator != 1)													// Formatting, if denominator is 1 then it is excluded.
+		if (Denominator != 1)																														// Formatting, if denominator is 1 then it is excluded.
 			cout << " / " << Denominator << "\n";
 
 		cout << "\nand\n\n";
@@ -144,35 +144,35 @@ int main() {
 			<< (Neg_numerator == false ? " - " : " + ") << (Root_Coef != 1 ? Root_coef_to_str : "") << (Complex_number == true ? "i" : "")			// solution
 			<< (Discrim != 0 ? " sqrt " : "") << Discrim << ")";
 		
-		if (Denominator != 1)													// Formatting, if denominator is 1 then it is excluded.
+		if (Denominator != 1)																														// Formatting, if denominator is 1 then it is excluded.
 			cout << " / " << Denominator;
 	}
 	else // Output when 2 real root solutions
 	{
 
-		cout << (Neg_solution == true ? "-" : "") << "(" << (Neg_numerator == true && Neg_solution != true ? "-" : "") << Numerator		// First root
-			<< (Neg_numerator == true ? " - " : " + ") << (Root_Coef != 1 ? Root_coef_to_str : "") << (Discrim != 0 ? " sqrt " : "")		// solution
+		cout << (Neg_solution == true ? "-" : "") << "(" << (Neg_numerator == true && Neg_solution != true ? "-" : "") << Numerator					// First root
+			<< (Neg_numerator == true ? " - " : " + ") << (Root_Coef != 1 ? Root_coef_to_str : "") << (Discrim != 0 ? " sqrt " : "")				// solution
 			<< Discrim << ")";
 		
-		if (Denominator != 1)																// Formatting, if denominator is 1 then it is excluded.
+		if (Denominator != 1)																														// Formatting, if denominator is 1 then it is excluded.
 			cout << " / " << Denominator;
 
-		if (abs(Root_plus) != floor(abs(Root_plus)))										// Formatting, states exact value if solution is a whole number
-			cout << "\n\nWhich is approximately: " << setprecision(6) << Root_plus << "\n";			// otherwise states approximate value.
+		if (abs(Root_plus) != floor(abs(Root_plus)))																								// Formatting, states exact value if solution is a whole number
+			cout << "\n\nWhich is approximately: " << setprecision(6) << Root_plus << "\n";															// otherwise states approximate value.
 		else
 			cout << "\n\nWhich is exactly: " << setprecision(6) << Root_plus << "\n";
 
 		cout << "\nand\n\n" << setprecision(1);
 
-		cout << (Neg_solution == true ? "-" : "") << "(" << (Neg_numerator == true && Neg_solution != true ? "-" : "") << Numerator		// Second root 
-			<< (Neg_numerator == false ? " - " : " + ") << (Root_Coef != 1 ? Root_coef_to_str : "") << (Discrim != 0 ? " sqrt " : "")	// solution
+		cout << (Neg_solution == true ? "-" : "") << "(" << (Neg_numerator == true && Neg_solution != true ? "-" : "") << Numerator					// Second root 
+			<< (Neg_numerator == false ? " - " : " + ") << (Root_Coef != 1 ? Root_coef_to_str : "") << (Discrim != 0 ? " sqrt " : "")				// solution
 			<< Discrim << ")";
 			
-		if (Denominator != 1)																// Formatting, if denominator is 1 then it is excluded.
+		if (Denominator != 1)																														// Formatting, if denominator is 1 then it is excluded.
 			cout << " / " << Denominator;
 
-		if (abs(Root_minus) != floor(abs(Root_minus)))										// Formatting, states exact value if solution is a whole number
-			cout << "\n\nWhich is approximately: " << setprecision(6) << Root_minus;		// otherwise states approximate value.
+		if (abs(Root_minus) != floor(abs(Root_minus)))																								// Formatting, states exact value if solution is a whole number
+			cout << "\n\nWhich is approximately: " << setprecision(6) << Root_minus;																// otherwise states approximate value.
 		else
 			cout << "\n\nWhich is exactly: " << setprecision(6) << Root_minus;
 	}
